@@ -1,0 +1,33 @@
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+.btnColor{
+  width: 25px;
+  height: 25px;
+  border: none;
+  margin-right: 10px;
+
+}
+
+#btnBuscar{
+margin-top: 5%;
+
+}
+
+#container-album{
+  margin-top: 5%;
+}
+
+#card-s{
+  text-align: center;
+
+}
+
+.link{
+  color: gray;
+  text-decoration: none;
+
+}
