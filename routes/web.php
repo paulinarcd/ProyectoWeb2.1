@@ -9,6 +9,7 @@ use App\Http\Controllers\Historial_comprasController;
 use App\Http\Controllers\Producto_colortallasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\TallasController;
+use App\Http\Controllers\login;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -52,3 +53,4 @@ Route::get('/colores/{id}',[ColorsController::class, 'edit'])->name('colores.edi
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
