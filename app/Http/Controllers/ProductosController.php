@@ -17,7 +17,7 @@ class ProductosController extends Controller
         $productos = Producto::all();
         $categorias = Categoria::all();
         $users = User::all();
-        return view("", compact('productos', 'categorias', 'users'));
+        return view("productos.gestion_productos", compact('productos', 'categorias', 'users'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ProductosController extends Controller
         $producto->id_categoria = $request->idCategoria;
         $producto->id_user = $request->idUser;
         $producto->save();
-        return redirect()->route('');
+        return redirect()->route('productos.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class ProductosController extends Controller
     public function edit(string $id)
     {
         $producto = Producto::find($id);
-        return view("", compact('producto'));
+        return view("productos.editar_productos", compact('producto'));
 
     }
 
@@ -97,7 +97,7 @@ class ProductosController extends Controller
         $producto->id_categoria = $request->idCategoria;
         $producto->id_user = $request->idUser;
         $producto->save();
-        return redirect()->route('.index');
+        return redirect()->route('productos.index');
     }
 
     /**
@@ -107,6 +107,6 @@ class ProductosController extends Controller
     {
         $producto = Producto::find($id);
         $producto->delete();
-        return redirect()->route('.index');
+        return redirect()->route('productos.index');
     }
 }

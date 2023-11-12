@@ -46,6 +46,13 @@ Route::delete('/colores/{id}',[ColorsController::class, 'destroy'])->name('color
 Route::put('/colores/{id}',[ColorsController::class, 'update'])->name('colores.update');
 Route::get('/colores/{id}',[ColorsController::class, 'edit'])->name('colores.edit');
 
+Route::get('/productos',[ProductosController::class,'index'])->name('productos.index');
+Route::post('/productos',[ProductosController::class, 'store'])->name('productos.store');
+Route::delete('/productos/{id}',[ProductosController::class, 'destroy'])->name('productos.destroy');
+Route::put('/productos/{id}',[ProductosController::class, 'update'])->name('productos.update');
+Route::get('/productos/{id}',[ProductosController::class, 'edit'])->name('productos.edit');
+
+
 
  Route::get('/', function () {
      return view('productos/visual');
