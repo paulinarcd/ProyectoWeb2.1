@@ -40,17 +40,18 @@ class ProductosController extends Controller
             'precio'=> 'required', 
             'genero'=> 'required', 
             'imagen'=> 'required', 
-            'idCategoria'=> 'required', 
-            'idUser'=> 'required', 
+            'categoria'=> 'required', 
+            'user'=> 'required', 
         ]); 
+
         $producto = new Producto();
         $producto->nombre = $request->nombreProducto;
         $producto->cantidad = $request->cantidad;
         $producto->precio = $request->precio;
         $producto->genero = $request->genero;
         $producto->imagen = $request->imagen;
-        $producto->id_categoria = $request->idCategoria;
-        $producto->id_user = $request->idUser;
+        $producto->id_categoria = $request->categoria;
+        $producto->id_user = $request->user;
         $producto->save();
         return redirect()->route('productos.index');
     }
