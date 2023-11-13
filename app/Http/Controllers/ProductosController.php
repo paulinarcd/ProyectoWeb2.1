@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\User;
+use Barryvdh\DomPDF\PDF;
+
 
 class ProductosController extends Controller
 {
@@ -109,5 +111,12 @@ class ProductosController extends Controller
         $producto = Producto::find($id);
         $producto->delete();
         return redirect()->route('productos.index');
+    }
+
+    public function generar_pdf(){
+        $productos = Producto::all(); 
+        $pdf = app('dompdf.wrapper')->loadView('productos.generar_pdf',  compact('productos')); 
+        return $pdf->stream('Listado_productos.pdf');
+
     }
 }

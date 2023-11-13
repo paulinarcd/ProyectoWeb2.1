@@ -61,3 +61,4 @@ Route::get('/productos/{id}',[ProductosController::class, 'edit'])->name('produc
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/pdf', [ProductosController::class, 'generar_pdf'])->name('descargar-pdf');

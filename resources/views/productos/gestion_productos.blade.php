@@ -43,7 +43,24 @@
       </div>
     </header>
 
-    <div class="container text-center">
+    <div class="container mt-3 text-center">
+      <div class="row">
+        <div class="col mt-3">
+            <a href="{{route('descargar-pdf')}}" class="btn btn-dark" >Generar listado de productos (PDF)</a>
+
+        </div>
+        <div class="col mt-3">
+            <a href="" class="btn btn-dark" >Generar Grafica</a>
+
+        </div>
+        <div class="col mt-3">
+            <a href="" class="btn btn-dark" >Generar Excel</a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 text-center">
       <div class="row">
         <div class="col-4">
             <div class="mb-3">
