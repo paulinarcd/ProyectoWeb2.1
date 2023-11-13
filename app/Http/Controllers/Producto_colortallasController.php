@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Talla;
 use App\Models\Colors;
+
 use App\Models\Producto_ColorTalla;
 
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class Producto_colortallasController extends Controller
         $productos = Producto::all();
         $tallas = Talla::all();
         $colors = Colors::all();
-        return view("",compact("prodtc, productos, tallas, colors"));
+        return view("productos.ver_productos", compact('prodtc','productos', 'tallas', 'colors'));
     }
 
     /**
@@ -46,7 +47,7 @@ class Producto_colortallasController extends Controller
         $prodtc->id_talla=$request->talla;
         $prodtc->id_color=$request->color;
         $prodtc->save();
-        return redirect()->route("productoTC.index");
+        return redirect()->route("productosCT.index");
 
     }
 
@@ -83,7 +84,7 @@ class Producto_colortallasController extends Controller
         $prodtc->id_talla=$request->talla;
         $prodtc->id_color=$request->color;
         $prodtc->save();
-        return redirect()->route("productoTC.index");
+        return redirect()->route("productosCT.index");
     }
 
     /**
@@ -93,6 +94,6 @@ class Producto_colortallasController extends Controller
     {
         $prodtc = Producto_ColorTalla::find($id);
         $prodtc->delete();
-        return redirect()->route("productoTC.index");
+        return redirect()->route("productosCT.index");
     }
 }
