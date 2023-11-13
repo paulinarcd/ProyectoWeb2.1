@@ -10,6 +10,8 @@ use App\Http\Controllers\Producto_colortallasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\TallasController;
 use App\Http\Controllers\login;
+use App\Http\Controllers\UsersController;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -58,6 +60,11 @@ Route::delete('/productosCT/{id}',[Producto_colortallasController::class, 'destr
 Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update'])->name('productosCT.update');
 Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
 
+Route::get('/usuarios',[UsersController::class,'index'])->name('usuarios.index');
+Route::post('/usuarios',[UsersController::class, 'store'])->name('usuarios.store');
+Route::delete('/usuarios/{id}',[UsersController::class, 'destroy'])->name('usuarios.destroy');
+Route::put('/usuarios/{id}',[UsersController::class, 'update'])->name('usuarios.update');
+Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.edit');
 
 
 

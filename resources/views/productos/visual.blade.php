@@ -169,7 +169,7 @@
           <img class="bd-placeholder-img" width="100%" height="100%" src="https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="">
             <div class="carousel-caption text-start">
               <h1>Descubre tu estilo</h1>
-              <p class="opacity-75">Encontraras diferentes productos de diferentes tiendas</p>
+              <p class="opacity-75">Encontrarás diferentes productos de diferentes tiendas</p>
             </div>
           </div>
         </div>

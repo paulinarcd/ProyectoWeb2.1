@@ -137,7 +137,7 @@
                   <h5>{{$producto->nombre}}</h5>
                   <p class="card-text">${{$producto->precio}}</p>
                   <button type="button" class="btn btn-dark">
-                    <a href="verproductos.html" style="text-decoration: none; color: white;">Añadir al carrito</a>
+                    <a href="" style="text-decoration: none; color: white;">Añadir al carrito</a>
                   </button>
                 </div>
               </div>
