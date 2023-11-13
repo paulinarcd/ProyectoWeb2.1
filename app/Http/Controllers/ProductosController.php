@@ -91,8 +91,8 @@ class ProductosController extends Controller
             'precio'=> 'required', 
             'genero'=> 'required', 
             'imagen'=> 'required', 
-            'idCategoria'=> 'required', 
-            'idUser'=> 'required', 
+            'categoria'=> 'required', 
+            'user'=> 'required', 
         ]); 
 
         $producto = Producto::find($id);        

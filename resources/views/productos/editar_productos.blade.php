@@ -52,13 +52,13 @@
                     @method('PUT')
 
                     <label for="nombreProducto">Ingrese nombre del producto</label>
-                    <input type="text" name="nombreProducto" id="nombreProducto" class="form-control mb-3" required>
+                    <input type="text" name="nombreProducto" id="nombreProducto" class="form-control mb-3"  value="{{$productos->nombre}}" required>
 
                     <label for="cantidad">Ingrese cantidad del producto</label>
-                    <input type="text" name="cantidad" id="cantidad" class="form-control mb-3" required>
+                    <input type="text" name="cantidad" id="cantidad" class="form-control mb-3" value="{{$productos->cantidad}}" required>
 
                     <label for="precio">Ingrese el precio del producto</label>
-                    <input type="text" name="precio" id="precio" class="form-control mb-3" required>
+                    <input type="text" name="precio" id="precio" class="form-control mb-3" value="{{$productos->precio}}" required>
 
                     <label for="genero">Ingrese genero</label>
                     <select name="genero" id="genero" class="form-control mb-3" required>
@@ -67,7 +67,7 @@
                     </select>
 
                     <label for="imagen">Ingrese URL de la imagen del producto:</label>
-                    <input type="url" name="imagen" id="imagen" placeholder="https://example.com" pattern="https://.*" class="form-control mb-3" required />
+                    <input type="url" name="imagen" id="imagen" placeholder="https://example.com" pattern="https://.*" class="form-control mb-3" value="{{$productos->imagen}}" required />
 
                     <label for="categoria">Elija la categoria del producto:</label>
                     <select name="categoria" id="categoria" class="form-control mb-3" required>
