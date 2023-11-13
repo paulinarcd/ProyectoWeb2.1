@@ -45,11 +45,12 @@
 
     <div class="container text-center">
       <div class="row">
-        <div class="col-4">
-            <div class="mb-3">
-              <h3>Crear Productos</h3>
-                <form action="{{route('productos.index')}}" method="post">
+
+              <h3>Actualizar Productos</h3>
+                <form action="{{route('productos.update', $productos->id)}}" method="post">
                     @csrf
+                    @method('PUT')
+
                     <label for="nombreProducto">Ingrese nombre del producto</label>
                     <input type="text" name="nombreProducto" id="nombreProducto" class="form-control mb-3" required>
 
@@ -61,8 +62,8 @@
 
                     <label for="genero">Ingrese genero</label>
                     <select name="genero" id="genero" class="form-control mb-3" required>
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
+                        <option value="genero">Hombre</option>
+                        <option value="genero">Mujer</option>
                     </select>
 
                     <label for="imagen">Ingrese URL de la imagen del producto:</label>
@@ -89,71 +90,9 @@
                         <br>
                   @enderror
 
-                  <button type="submit" class="btn btn-dark">Guardar</button>
+                <button type="submit" class="btn btn-dark">Guardar</button>
                 </form>
             </div>
-                
-                <script>
-                    var nombre= document.getElementById('nombreProducto').value;
-                    var cantidad= document.getElementById('cantidad').value;
-                    var precio= document.getElementById('precio').value;
-                    var genero= document.getElementById('genero').value;
-                    var imagen= document.getElementById('imagen').value;
-                    var categoria= document.getElementById('categoria').value;
-                    var user= document.getElementById('user').value;
-                </script>
-        </div>
-
-
-            <div class="col-8">
-                <div class="mb-3">
-                <table class="table table-sm">
-                  <h3>Tabla Productos</h3>
-                  <thead class="thead-dark">
-                    <tr>
-                      <th>Nombre</th>
-                      <th>Cantidad</th>
-                      <th>Precio</th>
-                      <th>Genero</th>
-                      <th>Imagen</th>
-                      <th>Categoria</th>
-                      
-        
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach($productos as $producto)
-                      <tr>
-                        <td>{{$producto->nombre}}</td>
-                        <td>{{$producto->cantidad}}</td>
-                        <td>{{$producto->precio}}</td>
-                        <td>{{$producto->genero}}</td>
-                        <td><img src="{{$producto->imagen}}" width="90" height="90"/></td>
-                        <td>{{$producto->categoria = $categoria->nombre;}}</td>
-
-                        
-                        <td>
-                          <th>
-                            <a href="{{route ('productos.edit', $producto->id)}}" class="btn btn-dark" >Editar</a>
-                          </th>
-                          <th>
-                          <form action="{{route('productos.destroy', $producto->id)}}" method="post">
-                              @csrf
-                              @method('delete')
-                              <button type='submit' class="btn btn-dark">Eliminar</button>
-                          </th>
-                              
-
-                        </td>
-                      </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-               
-          </div>
-
-      </div>
-
 
     
 

@@ -43,179 +43,116 @@
       </div>
     </header>
 
-      
 
+    <div class="d-flex flex-nowrap"> 
+      <div class="flex-shrink-0 p-3" style="width: 250px;">
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <input type="search" placeholder="Ejemplo: camisas" name="" id="busqueda">
+              <button type="button" class="btn btn-dark" id="btnBuscar">Buscar</button>
+            </li>
 
-    
-
-    
-
-
-    <div class="card">
-      <div class="card-body">
-        <div class="container text-center">
-      
-          <div class="row">
-            <div class="col-8">
-              <img src="img/camisetas.jpg" alt="" height ="400px" width="300px">
-
-              <div class="card" style="margin-top: 10%;">
-                <div class="card-header">
-                  Descripcion
-                </div>
-                <div class="card-body">
-                  <label for="">Descripcion del producto</label>
-                </div>
+            <li class="mb-1 border-top my-3">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                Categorias
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    @foreach($productos as $producto)
+                      <input type="checkbox" id="categoria">
+                      <label for="categoria" value="{{$producto->id}}">{{$producto->nombre}}</label> <br>
+                      @endforeach
+                  </li>
+                </ul>
               </div>
-            </div>
+            </li>
 
-
-            <div class="col-4">
-    
-              <div class="card">
-                <div class="card-body">
-                  <label for="">Nombre de la Tienda</label>
-                </div>
-              </div>
-              <br>
-              <div class="card">
-                <div class="card-body">
-                  <label for="">Nombre Producto</label>
-                </div>
-              </div>
-              <br>
-              <div class="card">
-                <div class="card-header">
-                  Precio
-                </div>
-                <div class="card-body">
-                  <label for="">$53.000</label>
-                </div>
-              </div>
-              <br>
-              <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#talla-collapse" aria-expanded="false">
-                  Talla
-                </button>
-                <div class="collapse" id="talla-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li>
-                      <select name="" id="">
-                        <option value="">
-                          <label for="box9">XS</label>
-                        </option>
-                        <option value="">
-                          <label for="box10">S</label>
-                        </option>
-                        <option value="">
-                          <label for="box11">M</label>
-                        </option>
-                        <option value="">
-                          <label for="box12">L</label>
-                        </option>
-                        <option value="">
-                          <label for="box13">XL</label>
-                        </option>
-                      </select>
-                      
-                      
-                    </li>
-                    
-                  </ul>
-                </div>
-                
-              </li>
-    
-              <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#color-collapse" aria-expanded="false">
-                  Color
-                </button>
-                <div class="collapse" id="color-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="lista_colores">
-                    <button class="btn" style="background-color: cadetblue;" ></button>
-                    <button class="btn" style="background-color:tan;" ></button>
-                    <button class="btn" style="background-color:beige " ></button>
-                    <button class="btn" style="background-color:brown" ></button>
-                    <button class="btn" style="background-color:blueviolet" ></button>
-                    <button class="btn" style="background-color:chocolate" ></button>
-                    <br>
-                    <button class="btn" style="background-color:black" ></button>
-                    <button class="btn" style="background-color:crimson;" ></button>
-                    <button class="btn" style="background-color:darkgoldenrod" ></button>
-                    <button class="btn" style="background-color:darkgreen" ></button>
-                    <button class="btn" style="background-color:darkgrey;" ></button>
-                    <button class="btn" style="background-color:darkred" ></button>
-                    <br>
-                    <button class="btn" style="background-color:hotpink" ></button>
-                    <button class="btn" style="background-color:darkorchid;" ></button>
-                    <button class="btn" style="background-color:khaki" ></button>
-                    <button class="btn" style="background-color:blue" ></button>
-                    <button class="btn" style="background-color:red" ></button>
-                    <button class="btn" style="background-color:darkslategray;" ></button>
+            <li class="mb-1  border-top my-3">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                Colores
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="lista_colores">
                   
-                  </ul>
-                </div>
-              </li>
+                  @foreach($colors as $color)
+                     <input type="checkbox" id="color">
+                      <label for="categoria" value="{{$producto->id}}">
+                      <input type="button" value="{{$color->id}}" style="background-color:{{$color->nombre}}; ">
+                      </label>
+                      
+                      
+                  @endforeach
+                
+                </ul>
+              </div>
+            </li>
+            
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                Talla
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                  @foreach($tallas as $talla)
+                      <input type="checkbox" id="talla">
+                      <label for="talla" value="{{$talla->id}}">{{$talla->nombre}}</label> <br>
+                      @endforeach
+                  </li>
+
+                </ul>
+              </div>
               
-              <button class="btn btn-dark">Agregar al carrito</button>
-            </div>
-          </div>
-        </div>
+            </li>
+
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#precio-collapse" aria-expanded="false">
+                Precio
+              </button>
+              <div class="collapse" id="precio-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <label for="customRange1" class="form-label"></label>
+                  <input type="range" class="form-range" id="customRange1">
+                </ul>
+              </div>
+              
+            </li>
+          </ul>
+        </form>
       </div>
-    </div>
+
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          @foreach($productos as $producto)
+
+          <div class="col">
+              <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" width="300" height="250" src="{{$producto->imagen}}" alt="">
+                <div class="card-body">
+                  <h5>{{$producto->nombre}}</h5>
+                  <p class="card-text">${{$producto->precio}}</p>
+                  <button type="button" class="btn btn-dark">
+                    <a href="verproductos.html" style="text-decoration: none; color: white;">Añadir al carrito</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          @endforeach
 
 
 
 
 
-
-
-    <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div class="col mb-3">
-          <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-          </a>
-          <p class="text-body-secondary">&copy; 2023</p>
-        </div>
     
-        <div class="col mb-3">
-    
-        </div>
-    
-        <div class="col mb-3">
-          <h5>Secciones</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Inicio</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hombre</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Mujer</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tiendas</a></li>
 
-          </ul>
-        </div>
-    
-        <div class="col mb-3">
-          <h5>Contacto</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">WhatsApp 3206642211</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram @ropatt</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">ropatt@gmail.com</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Escribenos</a></li>
-          </ul>
-        </div>
-    
-      
-      </footer>
-    </div>
-
-
-
-
-
-  
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <!-- <script src="verproductos.css"></script> -->
   </body>
 </html>

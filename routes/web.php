@@ -52,11 +52,22 @@ Route::delete('/productos/{id}',[ProductosController::class, 'destroy'])->name('
 Route::put('/productos/{id}',[ProductosController::class, 'update'])->name('productos.update');
 Route::get('/productos/{id}',[ProductosController::class, 'edit'])->name('productos.edit');
 
+Route::get('/productosCT',[Producto_colortallasController::class,'index'])->name('productosCT.index');
+Route::post('/productosCT',[Producto_colortallasController::class, 'store'])->name('productosCT.store');
+Route::delete('/productosCT/{id}',[Producto_colortallasController::class, 'destroy'])->name('productosCT.destroy');
+Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update'])->name('productosCT.update');
+Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
+
+
+
 
 
  Route::get('/', function () {
      return view('productos/visual');
  });
+
+
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

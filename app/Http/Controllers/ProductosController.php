@@ -69,8 +69,10 @@ class ProductosController extends Controller
      */
     public function edit(string $id)
     {
-        $producto = Producto::find($id);
-        return view("productos.editar_productos", compact('producto'));
+        $productos = Producto::find($id);
+        $categorias = Categoria::all();
+        $users = User::all();
+        return view("productos.editar_productos", compact('productos', 'categorias', 'users'));
 
     }
 
@@ -91,12 +93,12 @@ class ProductosController extends Controller
 
         $producto = Producto::find($id);        
         $producto->nombre = $request->nombreProducto;
-        $producto->cantidad = $request->catidad;
+        $producto->cantidad = $request->cantidad;
         $producto->precio = $request->precio;
         $producto->genero = $request->genero;
         $producto->imagen = $request->imagen;
-        $producto->id_categoria = $request->idCategoria;
-        $producto->id_user = $request->idUser;
+        $producto->id_categoria = $request->categoria;
+        $producto->id_user = $request->user;
         $producto->save();
         return redirect()->route('productos.index');
     }
