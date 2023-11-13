@@ -73,3 +73,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/pdf', [ProductosController::class, 'generar_pdf'])->name('descargar-pdf');
+Route::get('/excel', [ProductosController::class, 'generar_excel'])->name('descargar-excel');

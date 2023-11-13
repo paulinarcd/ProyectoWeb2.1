@@ -54,7 +54,7 @@
 
         </div>
         <div class="col mt-3">
-            <a href="" class="btn btn-dark" >Generar Excel</a>
+            <a href="{{route('descargar-excel')}}" class="btn btn-dark" >Generar Excel</a>
 
         </div>
       </div>

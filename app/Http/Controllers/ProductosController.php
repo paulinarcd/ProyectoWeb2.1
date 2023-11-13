@@ -7,6 +7,8 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\User;
 use Barryvdh\DomPDF\PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductosExport;
 
 
 class ProductosController extends Controller
@@ -120,5 +122,10 @@ class ProductosController extends Controller
         $pdf = app('dompdf.wrapper')->loadView('productos.generar_pdf',  compact('productos')); 
         return $pdf->stream('Listado_productos.pdf');
 
+    }
+
+    public function generar_excel(){    
+        return Excel::download(new ProductosExport, 'productos.xlsx' ); 
+    
     }
 }
