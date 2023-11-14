@@ -15,7 +15,11 @@ class CamisapersController extends Controller
      */
     public function index()
     {
-        //
+        $camisapers= CamisaPers::all();
+        $tallas = Talla::all();
+        $colors = Colors::all();
+        $users = User::all();
+        return view("productos.personalizar", compact('camisapers', 'tallas', 'colors'));
     }
 
     /**
@@ -23,11 +27,7 @@ class CamisapersController extends Controller
      */
     public function create()
     {
-        $camiapers= CamisaPers::all();
-        $tallas = Talla::all();
-        $colors = Colors::all();
-        $users = User::all();
-        return view("", compact("camisapers, tallas, colors"));
+
     }
 
     /**

@@ -14,27 +14,27 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="images/bolsa-de-la-compra.png" alt="" height ="40px" width="40px">
+            <img src="img/bolsa-de-la-compra.png" alt="" height ="40px" width="40px">
             
           </a>
   
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/" class="nav-link px-2 text-secondary">Inicio</a></li>
-            <li><a href="/" class="nav-link px-2 text-white">Hombre</a></li>
-            <li><a href="/" class="nav-link px-2 text-white">Mujer</a></li>
-            <li><a href="/" class="nav-link px-2 text-white">Tiendas</a></li>
+            <li><a href="index.html" class="nav-link px-2 text-secondary">Inicio</a></li>
+            <li><a href="visual.html" class="nav-link px-2 text-white">Hombre</a></li>
+            <li><a href="visual.html" class="nav-link px-2 text-white">Mujer</a></li>
+            <li><a href="visual.html" class="nav-link px-2 text-white">Tiendas</a></li>
           </ul>
 
   
           <div class="text-end">
             <button type="button" class="btn btn-outline-light me-2">
-              <a class="link" href="home">Iniciar Sesion</a>
+              <a class="link" href="InicioSesion.html">Iniciar Sesion</a>
             </button>
             <button type="button" class="btn btn-outline-light me-3">
-              <a  class="link" href="home">Registrarse</a>
+              <a  class="link" href="registro.html">Registrarse</a>
             </button>
             <button type="button" class="btn btn-light"> 
-              <img src="images/carrito-de-compras.png" alt="" height ="20px" width="20px">
+              <img src="img/carrito-de-compras.png" alt="" height ="20px" width="20px">
             </button>
           </div>
         </div>
