@@ -58,9 +58,7 @@ Route::delete('/productosCT/{id}',[Producto_colortallasController::class, 'destr
 Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update'])->name('productosCT.update');
 Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
 
-
-
-
+Route::get('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.index');
 
  Route::get('/', function () {
      return view('productos/visual');
