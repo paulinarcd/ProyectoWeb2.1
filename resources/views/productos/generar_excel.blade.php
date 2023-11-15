@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
 
 <div class="col-8">
     <div class="mb-3">
@@ -26,6 +28,5 @@
     </table>
     
 </div>
-
-
+@endsection
 
