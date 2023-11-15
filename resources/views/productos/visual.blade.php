@@ -160,8 +160,9 @@
           <div class="container">
             <div class="carousel-caption  text-start">
               <h1>Personaliza tu camiseta.</h1>
+
               <p class="opacity-75">Elige color y estilos que desees.</p>
-              <p><a class="btn btn-lg btn-dark" href="personalizar.html">Personaliza</a></p>
+              <p><a class="btn btn-lg btn-dark" href="{{route ('personalizar.index')}}">Personaliza</a></p>
             </div>
           </div>
         </div>
