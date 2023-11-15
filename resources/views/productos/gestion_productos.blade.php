@@ -95,13 +95,9 @@
                         @endforeach
                     </select>
 
-
-                    <label for="user">Elija la marca:</label>
-                    <select name="user" id="user" class="form-control mb-3" required>
-                        @foreach($users as $user)
-                            <option value="{{$user->id}}"  class="form-control mb-3">{{$user->name}}</option>
-                        @endforeach
-                    </select>
+                    <label for="user">Nombre de la tienda: {{auth()->user()->name}}</label>
+                    <input type="text" value="{{auth()->user()->id}}" name="user" id="user" class="form-control mb-3" readonly>
+                
 
                   @error('nombreProducto')
                         <br>

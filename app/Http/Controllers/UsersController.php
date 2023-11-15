@@ -94,4 +94,17 @@ class UsersController extends Controller
         $users->delete();
         return redirect()->route('usuarios.index');
     }
+
+
+    public function indexVendedor()
+    {
+        $users = User::all();
+        return view('usuarios.ver_perfil', compact('users'));
+    }
+
+    public function index2()
+    {
+        $users = User::all();
+        return view('usuarios.ver_perfil', compact('users'));
+    }
 }

@@ -84,6 +84,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/pdf', [ProductosController::class, 'generar_pdf'])->name('descargar-pdf');
 Route::get('/excel', [ProductosController::class, 'generar_excel'])->name('descargar-excel');
 
+Route::get('/verperfil', [UsersController::class, 'index2'])->name('verperfil.index2');
+Route::get('/verperfilV', [ProductosController::class, 'index2'])->name('verperfilV.index2');
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/camisa', CamisaPersController::class );

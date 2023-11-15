@@ -128,4 +128,10 @@ class ProductosController extends Controller
         return Excel::download(new ProductosExport, 'productos.xlsx' ); 
     
     }
+
+    public function index2()
+    {
+        $productos = Producto::all();
+        return view('usuarios.ver_perfilV', compact('productos'));
+    }
 }
