@@ -4,9 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JOPS STORE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylePersonalizar.css">
+    <link rel="stylesheet" href="">
 </head>
+
+
+<style>
+    #image-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+    }
+
+    #selected-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: 1; /* Asegura que la imagen seleccionada esté encima de la imagen de fondo */
+    }
+
+
+</style>
   <body>
 
     <header class="p-3 text-bg-dark">
@@ -47,15 +70,18 @@
 
       <div class="album py-5 bg-body-tertiary">
         <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-           
+          <div class="row row-cols-1 row-cols-sm-2  g-2">
 
             <div class="col">
-              <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="" src="https://oaxis-cloud.s3.us-east-2.amazonaws.com/images/2022/07/14/lS6FbGUr4eEyrvkpbmTW.jpg" alt="">
-                <div class="card-body">
+              <div class="card shadow-sm" style="width: 500px; height: 500px;">
+                <div class="card-body"  id="image-container">
+                
+                    <img class="bd-placeholder-img card-img-top" id="imagenPrincipal" width="100%" height="100%" src="https://static.vecteezy.com/system/resources/previews/021/103/506/non_2x/black-t-shirt-mockup-free-png.png" alt="Imagen">
+                    <img  class="bd-placeholder-img card-img-top" id="selected-image" src="" alt="Imagen">
+                
                 </div>
+                
+        
               </div>
             </div>
 
@@ -67,50 +93,24 @@
                     <label for="archivo" class="input-file-label">
                         Seleccionar Archivo
                     </label>
-                      <input type="file" name="archivo" id="archivo" class="input-file">
-                      
-                      
-                    <h5 style="margin-top: 70px">Estilos</h5>
-                    <p class="card-text">Nuestros diseños</p>
-                    <button type="button" class="btn btn-dark">Mostrar</button>
-
-                  </div>
-                </div>
-              </div>
+                    <input type="file" id="fileInput" accept=".png, .jpg, .jpeg">
 
 
+                      <ul class="list-unstyled ps-0">
 
-            <div class="d-flex flex-nowrap"> 
-                <div class="flex-shrink-0 p-3" style="width: 250px;">
-                    <ul class="list-unstyled ps-0">
-          
                       <li class="mb-1  border-top my-3">
                         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                           Colores
                         </button>
                         <div class="collapse" id="orders-collapse">
-                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="lista_colores">
-                            <button class="btnColor" style="background-color: cadetblue;" ></button>
-                            <button class="btnColor" style="background-color:tan;" ></button>
-                            <button class="btnColor" style="background-color:beige " ></button>
-                            <button class="btnColor" style="background-color:brown" ></button>
-                            <button class="btnColor" style="background-color:blueviolet" ></button>
-                            <button class="btnColor" style="background-color:chocolate" ></button>
-                            <button class="btnColor" style="background-color:black" ></button>
-                            <button class="btnColor" style="background-color:crimson;" ></button>
-                            <button class="btnColor" style="background-color:darkgoldenrod" ></button>
-                            <button class="btnColor" style="background-color:darkgreen" ></button>
-                            <button class="btnColor" style="background-color:darkgrey;" ></button>
-                            <button class="btnColor" style="background-color:darkred" ></button>
-                            <button class="btnColor" style="background-color:hotpink" ></button>
-                            <button class="btnColor" style="background-color:darkorchid;" ></button>
-                            <button class="btnColor" style="background-color:khaki" ></button>
-                            <button class="btnColor" style="background-color:blue" ></button>
-                            <button class="btnColor" style="background-color:red" ></button>
-                            <button class="btnColor" style="background-color:darkslategray;" ></button>
-                          
-                          </ul>
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="lista_colores">
+                            <button class="btnColor" style="background-color: black;" data-imagen="https://static.vecteezy.com/system/resources/previews/021/103/506/non_2x/black-t-shirt-mockup-free-png.png">Aqui</button>
+                              <button class="btnColor" style="background-color: blue;" data-imagen="https://diezstudio.com.co/cdn/shop/files/Diez.png?v=1685398665">Aqui</button>
+                              <button class="btnColor" style="background-color: rgb(255, 255, 255);" data-imagen="https://static.vecteezy.com/system/resources/thumbnails/010/883/931/small/white-kids-t-shirt-mockups-short-sleeve-free-png.png">Aqui</button>
+                              <button class="btnColor" style="background-color: red;" data-imagen="https://static.vecteezy.com/system/resources/previews/021/103/351/non_2x/red-isolated-t-shirt-free-png.png">Aqui</button>
+                            </ul>
                         </div>
+
                       </li>
                       
                       <li class="border-top my-3"></li>
@@ -120,51 +120,46 @@
                         </button>
                         <div class="collapse" id="account-collapse">
                           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            
                             <li>
-                              <input type="checkbox" id="box9">
-                              <label for="box9">XS</label>
+                            @foreach($tallas as $talla)
+                              <input type="checkbox" id="talla">
+                              <label for="talla" value="{{$talla->id}}">{{$talla->nombre}}</label> <br>
+                              @endforeach
                             </li>
-                            <li>
-                              <input type="checkbox" id="box10">
-                              <label for="box210">S</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="box11">
-                              <label for="box11">M</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="box12">
-                              <label for="box12">L</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" id="box13">
-                              <label for="box13">XL</label>
-                            </li>
+
+                           
+                          
                           </ul>
                         </div>
                         
                       </li>
-          
-                      <li class="border-top my-3"></li>
-                      <li class="mb-1">
-                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#precio-collapse" aria-expanded="false">
-                          Precio
-                        </button>
-                        <div class="collapse" id="precio-collapse">
-                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <label for="customRange1" class="form-label"></label>
-                            <input type="range" class="form-range" id="customRange1">
-                          </ul>
-                        </div>
-                        
-                      </li>
+
                     </ul>
-                
+                      
+                  </div>
                 </div>
+                <br>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div id="resize-buttons">
+                            <button id="increase-size" class="btn btn-dark">Aumentar tamaño</button>
+                            <button id="decrease-size" class="btn btn-dark">Reducir tamaño</button>
+                            <button type="submit" id="save-as-image" class="btn btn-dark">Guardar como imagen</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
 
 
-          </div>
-        </div>
+        </form>
+              
+
+            </div>
+    <script>
+           
+    </script>
+
       </div>
     </div>
 
@@ -207,7 +202,128 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"> </script>
+    <script>
+
+const fileInput = document.getElementById('fileInput');
+const selectedImage = document.getElementById('selected-image');
+const increaseSizeButton = document.getElementById('increase-size');
+const decreaseSizeButton = document.getElementById('decrease-size');
+const imageContainer = document.getElementById('image-container');
+const imagenPrincipal = document.getElementById('imagenPrincipal');
+let isDraggingImage = false;
+let offsetX, offsetY;
+const saveAsImageButton = document.getElementById('save-as-image');
+
+
+
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file && (file.type === 'image/png' || file.type === 'image/jpeg' || file.type === 'image/jpg')) {
+        const imageUrl = URL.createObjectURL(file);
+        selectedImage.src = imageUrl;
+        selectedImage.style.width = '100%';
+        selectedImage.style.height = '100%';
+        fitImageWithinContainer(selectedImage);
+    }
+});
+
+increaseSizeButton.addEventListener('click', () => {
+    resizeImage(selectedImage, 1.1);
+    fitImageWithinContainer(selectedImage);
+});
+
+decreaseSizeButton.addEventListener('click', () => {
+    resizeImage(selectedImage, 0.9);
+    fitImageWithinContainer(selectedImage);
+});
+
+selectedImage.addEventListener('mousedown', (e) => {
+    isDraggingImage = true;
+    offsetX = e.clientX - selectedImage.getBoundingClientRect().left;
+    offsetY = e.clientY - selectedImage.getBoundingClientRect().top;
+    selectedImage.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (isDraggingImage) {
+        const x = e.clientX - offsetX;
+        const y = e.clientY - offsetY;
+        const containerRect = imageContainer.getBoundingClientRect();
+        const maxLeft = 0;
+        const maxTop = 0;
+        const maxRight = containerRect.width - selectedImage.offsetWidth;
+        const maxBottom = containerRect.height - selectedImage.offsetHeight;
+
+        selectedImage.style.left = Math.max(maxLeft, Math.min(maxRight, x)) + 'px';
+        selectedImage.style.top = Math.max(maxTop, Math.min(maxBottom, y)) + 'px';
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isDraggingImage = false;
+    selectedImage.style.cursor = 'grab';
+});
+
+function resizeImage(image, factor) {
+    const currentWidth = image.clientWidth;
+    const currentHeight = image.clientHeight;
+    image.style.width = (currentWidth * factor) + 'px';
+    image.style.height = (currentHeight * factor) + 'px';
+}
+
+function fitImageWithinContainer(image) {
+    const containerWidth = imageContainer.clientWidth;
+    const containerHeight = imageContainer.clientHeight;
+    const imageWidth = image.clientWidth;
+    const imageHeight = image.clientHeight;
+
+    if (imageWidth > containerWidth || imageHeight > containerHeight) {
+        const widthRatio = containerWidth / imageWidth;
+        const heightRatio = containerHeight / imageHeight;
+        const minRatio = Math.min(widthRatio, heightRatio);
+        image.style.width = (imageWidth * minRatio) + 'px';
+        image.style.height = (imageHeight * minRatio) + 'px';
+    }
+}
+
+
+
+saveAsImageButton.addEventListener('click', () => {
+    html2canvas(imageContainer, {
+        useCORS: true,
+        logging: true, // Para ver posibles errores en la consola
+    }).then((canvas) => {
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'contenedor_completo.png';
+        link.click();
+    });
+});
+
+
+  // Función para cambiar el color de la imagen principal
+  function cambiarColor(event) {
+    var imagenPrincipal = document.getElementById('imagenPrincipal');
+    // Obtener la URL de la imagen asociada al botón
+    var nuevaImagen = event.target.getAttribute('data-imagen');
+    if (nuevaImagen) {
+      imagenPrincipal.src = nuevaImagen;
+    }
+  }
+
+  // Eventos para los botones
+  document.getElementById('lista_colores').addEventListener('click', function (event) {
+    if (event.target.classList.contains('btnColor')) {
+      cambiarColor(event);
+    }
+  });
+
+
+
+
+    </script>
 
   </body>
 </html>
