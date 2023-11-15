@@ -111,9 +111,9 @@
             </div>
                 
                 <script>
-                    var nombre= document.getElementById('nombreProducto').value;
-                    var cantidad= document.getElementById('cantidad').value;
-                    var precio= document.getElementById('precio').value;
+                    var nombre = document.getElementById('nombreProducto').value;
+                    var cantidad = document.getElementById('cantidad').value;
+                    var precio = document.getElementById('precio').value;
                     var genero= document.getElementById('genero').value;
                     var imagen= document.getElementById('imagen').value;
                     var categoria= document.getElementById('categoria').value;

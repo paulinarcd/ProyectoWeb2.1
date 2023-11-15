@@ -73,9 +73,9 @@ Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.ed
 Route::get('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.index');
 Route::post('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.store');
 
- Route::get('/', function () {
+Route::get('/', function () {
      return view('productos/visual');
- });
+});
 
 
 Auth::routes();

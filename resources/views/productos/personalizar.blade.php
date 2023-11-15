@@ -146,6 +146,7 @@
                             <button id="increase-size" class="btn btn-dark">Aumentar tamaño</button>
                             <button id="decrease-size" class="btn btn-dark">Reducir tamaño</button>
                             <button type="submit" id="save-as-image" class="btn btn-dark">Guardar como imagen</button>
+
                         </div>
                     </div>
                 </div>
