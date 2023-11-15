@@ -59,6 +59,7 @@ Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update']
 Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
 
 Route::get('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.index');
+Route::post('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.store');
 
  Route::get('/', function () {
      return view('productos/visual');

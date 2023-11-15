@@ -47,11 +47,11 @@ class CamisapersController extends Controller
 
         $camiapers = new CamisaPers();
         $camiapers->precio=$request->precio;
-        $camiapers->imagen=$request->precio;
-        $camiapers->id_talla=$request->precio;
-        $camiapers->id_color=$request->precio;
+        $camiapers->imagen=$request->imagen;
+        $camiapers->id_talla=$request->talla;
+        $camiapers->id_color=$request->color;
         $camiapers->save();
-        return redirect()->route("");
+        return redirect()->route("personalizar.index");
 
     }
 
@@ -89,9 +89,9 @@ class CamisapersController extends Controller
         
         $camisapers = CamisaPers::find($id);
         $camisapers->precio=$request->precio;
-        $camisapers->imagen=$request->precio;
-        $camisapers->id_talla=$request->precio;
-        $camisapers->id_color=$request->precio;
+        $camisapers->imagen=$request->imagen;
+        $camisapers->id_talla=$request->talla;
+        $camisapers->id_color=$request->color;
         $camisapers->save();
         return redirect()->route("");
 
