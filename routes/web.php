@@ -60,7 +60,6 @@ Route::delete('/productosCT/{id}',[Producto_colortallasController::class, 'destr
 Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update'])->name('productosCT.update');
 Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
 
-<<<<<<< HEAD
 Route::get('/usuarios',[UsersController::class,'index'])->name('usuarios.index');
 Route::post('/usuarios',[UsersController::class, 'store'])->name('usuarios.store');
 Route::delete('/usuarios/{id}',[UsersController::class, 'destroy'])->name('usuarios.destroy');
@@ -69,9 +68,7 @@ Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.ed
 
 
 
-=======
 Route::get('/personalizar',[CamisaPersController::class,'index'])->name('personalizar.index');
->>>>>>> 5abbdcc6643b8b76ff52554d2fb063aeaea336bf
 
  Route::get('/', function () {
      return view('productos/visual');
