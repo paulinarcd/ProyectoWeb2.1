@@ -1,19 +1,19 @@
 function mostrarGrafica(){
-    const api = "https://api.escuelajs.co/api/v1/products";
-    var nombre = []
-    var imagenes = []
+    const api = "https://fakestoreapi.com/products/";
+    var categoria = []
+    var id = []
     fetch(api)
         .then(Response => Response.json())
         .then(datos=>{
             datos.forEach(function(element) {
-                if(element.name!='' && element.image!=''){
-                    nombre.push(element.name);
-                    imagenes.push(element.image);
+                if(element.category!='' && element.id!=''){
+                    categoria.push(element.category);
+                    id.push(element.id);
                 }
                 var trace1 = {
                     type: 'bar',
-                    x: nombre,
-                    y: imagenes,
+                    x: categoria,
+                    y: id,
                     marker: {
                         color: '#C8A2C8',
                         line: {
@@ -25,7 +25,7 @@ function mostrarGrafica(){
                   var data = [ trace1 ];
                   
                   var layout = { 
-                    title: 'Cantidad de productos por nombre',
+                    title: 'Cantidad de productos por categoria',
                     font: {size: 18}
                   };
                   

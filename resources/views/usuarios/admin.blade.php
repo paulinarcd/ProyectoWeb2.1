@@ -63,8 +63,11 @@
           <p><a class="btn btn-lg btn-dark" href="{{route ('tallas.index')}}">Gestion de Tallas</a></p>
           <p><a class="btn btn-lg btn-dark" href="{{route ('tallas.index')}}">Gestion de Colores</a></p>
           <p><a class="btn btn-lg btn-dark" href="{{route ('usuarios.index')}}">Gestion de Usuarios</a></p>
-          <p><a class="btn btn-lg btn-dark" href="{{route ('tallas.index')}}">API</a></p>
+          <p><a class="btn btn-lg btn-dark" onclick="mostrarGrafica()">Mostrar grafico</a></p>
+          <p><a class="btn btn-lg btn-dark" onclick="escondergrafico()">Ocultar grafico</a></p>
 
+          <script src="{{ asset('api.js') }}"></script>
+          <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
           </div>
 
           <div class="col-8">
@@ -95,7 +98,7 @@
           </div>
 
       </div>
-
+      <div class="container" id="grafico"></div>
         
 
               
