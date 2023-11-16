@@ -107,4 +107,12 @@ class UsersController extends Controller
         $users = User::all();
         return view('usuarios.ver_perfil', compact('users'));
     }
+
+
+    public function indexAdmin()
+    {
+        $users = User::all();
+        return view('usuarios.admin', compact('users'));
+    }
+
 }
