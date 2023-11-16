@@ -86,6 +86,7 @@ Route::get('/excel', [ProductosController::class, 'generar_excel'])->name('desca
 
 Route::get('/verperfil', [UsersController::class, 'index2'])->name('verperfil.index2');
 Route::get('/verperfilV', [ProductosController::class, 'index2'])->name('verperfilV.index2');
+Route::get('/admin', [UsersController::class, 'indexAdmin'])->name('admin.indexAdmin');
 
 
 
