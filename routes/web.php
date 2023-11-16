@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\TallasController;
 use App\Http\Controllers\login;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Middleware\Proteccion;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -91,6 +92,15 @@ Route::get('/admin', [UsersController::class, 'indexAdmin'])->name('admin.indexA
 
 
 Route::middleware(['auth'])->group(function () {
+
+     // Route::middleware(['auth','proteccion:admin'])->group(function () {
+          Route::get('/usuarios',[UsersController::class,'index'])->name('usuarios.index');
+          Route::post('/usuarios',[UsersController::class, 'store'])->name('usuarios.store');
+          Route::delete('/usuarios/{id}',[UsersController::class, 'destroy'])->name('usuarios.destroy');
+          Route::put('/usuarios/{id}',[UsersController::class, 'update'])->name('usuarios.update');
+          Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.edit');
+     // });
+
     Route::resource('/camisa', CamisaPersController::class );
     Route::resource('/cat', CategoriasController::class );
 
@@ -128,11 +138,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/productosCT/{id}',[Producto_colortallasController::class, 'update'])->name('productosCT.update');
     Route::get('/productosCT/{id}',[Producto_colortallasController::class, 'edit'])->name('productosCT.edit');
 
-    Route::get('/usuarios',[UsersController::class,'index'])->name('usuarios.index');
-    Route::post('/usuarios',[UsersController::class, 'store'])->name('usuarios.store');
-    Route::delete('/usuarios/{id}',[UsersController::class, 'destroy'])->name('usuarios.destroy');
-    Route::put('/usuarios/{id}',[UsersController::class, 'update'])->name('usuarios.update');
-    Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.edit');
+//     Route::get('/usuarios',[UsersController::class,'index'])->name('usuarios.index');
+//     Route::post('/usuarios',[UsersController::class, 'store'])->name('usuarios.store');
+//     Route::delete('/usuarios/{id}',[UsersController::class, 'destroy'])->name('usuarios.destroy');
+//     Route::put('/usuarios/{id}',[UsersController::class, 'update'])->name('usuarios.update');
+//     Route::get('/usuarios/{id}',[UsersController::class, 'edit'])->name('usuarios.edit');
 
 
 

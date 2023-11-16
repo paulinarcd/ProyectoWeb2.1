@@ -16,7 +16,7 @@ class Proteccion
     public function handle(Request $request, Closure $next, $rols): Response
     {
         $rolesPermitidos = explode('|', $rols);
-        $rolUsuario = strtolower($request->user()->rols->label);
+        $rolUsuario = strtolower($request->user()->rols);
         if(!in_array($rolUsuario, $rolesPermitidos))
             return abort(403,__('Unauthorized'));
         return $next($request);
