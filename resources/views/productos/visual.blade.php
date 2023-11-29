@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,133 +12,6 @@
 </head>
 
   <body>
-
-
-    <header class="p-3 text-bg-dark">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          
-          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="images/bolsa-de-la-compra.png" alt="" height ="40px" width="40px">
-            
-          </a>
-  
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/" class="nav-link px-2 text-white  ">Inicio</a></li>
-            <li><a href="/" class="nav-link px-2 text-secondary">Hombre</a></li>
-            <li><a href="/" class="nav-link px-2 text-secondary">Mujer</a></li>
-            <li><a href="/" class="nav-link px-2 text-secondary">Tiendas</a></li>
-          </ul>
-
-  
-          <div class="btn btn-light">
-            {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> --}}
-              <!-- Left Side Of Navbar -->
-              <ul class="navbar-nav me-auto">
-                <img src="images/carrito-de-compras.png" alt="" height ="20px" width="20px">
-              </ul>
-            {{-- <div> --}}
-              {{-- <button type="button" class="btn btn-light"> 
-              <img src="images/carrito-de-compras.png" alt="" height ="20px" width="20px">
-              </button> --}}
-            </div>
-            <div class="text-end">
-            <ul class="navbar-nav me-auto">
-              @guest
-                @if (Route::has('login'))
-                  <li class="btn btn-outline-dark me-3">
-                    <a class="btn btn-outline-light me-2" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
-                  </li>
-                @endif
-        
-                @if (Route::has('register'))
-                  <li class="btn btn-outline-dark me-3">
-                    <a class="btn btn-outline-light me-2" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                  </li>
-                @endif
-              @else
-                {{-- <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                  </svg> --}}
-                  <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Cerrar sesion') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                {{-- </button> --}}
-              @endguest
-            </ul>
-
-          {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button type="button" class="btn btn-light"> 
-              <img src="images/carrito-de-compras.png" alt="" height ="20px" width="20px">
-            </button>
-              <!-- Left Side Of Navbar -->
-              <ul class="navbar-nav me-auto">
-
-              </ul>
-
-              <!-- Right Side Of Navbar -->
-              <ul class="navbar-nav ms-auto">
-                  <!-- Authentication Links -->
-                  @guest
-                      @if (Route::has('login'))
-                          <li class="btn btn-outline-dark me-3">
-                              <a class="btn btn-outline-light me-2" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
-                          </li>
-                      @endif
-
-                      @if (Route::has('register'))
-                          <li class="btn btn-outline-dark me-3">
-                              <a class="btn btn-outline-light me-2" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                          </li>
-                      @endif
-                  @else
-                      <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                        </svg>
-                      </button>
-                      <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }}
-                          </a>
-
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                 onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                  {{ __('Cerrar sesion') }}
-                              </a>
-
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                  @csrf
-                              </form>
-                          </div>
-                      </li>
-                  @endguest
-              </ul>
-          </div> --}}
-
-        
-          </div>
-        </div>
-      </div>
-    </header>
-
 
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -278,3 +154,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
+@endsection
