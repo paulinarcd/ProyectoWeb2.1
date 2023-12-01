@@ -1,4 +1,4 @@
-Oscar Alejandro Ramírez
+-Oscar Alejandro Ramírez
  - Jonathan Alexander Valencia
 - Paulina Ramírez
  - Samuel Alzate Morales
